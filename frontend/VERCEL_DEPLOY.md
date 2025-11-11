@@ -36,6 +36,13 @@ vercel env add NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL
 
 値に `https://wpmibyo.otemae-osu.com/graphql` を入力し、Production / Preview / Development のすべてに設定しておくと安心です。
 
+Basic 認証で WordPress 全体を保護している場合は、以下も登録します。
+
+```bash
+vercel env add WORDPRESS_GRAPHQL_BASIC_AUTH_USER
+vercel env add WORDPRESS_GRAPHQL_BASIC_AUTH_PASSWORD
+```
+
 ### 4. 本番デプロイ
 
 ```bash
@@ -55,6 +62,8 @@ vercel --prod
    | Name | Value |  
    | --- | --- |  
    | `NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL` | `https://wpmibyo.otemae-osu.com/graphql` |
+   | `WORDPRESS_GRAPHQL_BASIC_AUTH_USER` | *(Basic認証利用時のみ)* |
+   | `WORDPRESS_GRAPHQL_BASIC_AUTH_PASSWORD` | *(Basic認証利用時のみ)* |
 5. 「Deploy」をクリック
 
 ---

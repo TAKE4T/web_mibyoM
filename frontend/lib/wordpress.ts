@@ -1,12 +1,25 @@
 import { GraphQLClient, gql } from 'graphql-request';
 
-const GRAPHQL_URL = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL || 'https://wpmibyo.otemae-osu.com/graphql';
+const GRAPHQL_URL =
+  process.env.WORDPRESS_GRAPHQL_URL ||
+  process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL ||
+  'https://wpmibyo.otemae-osu.com/graphql';
+
+const BASIC_AUTH_USER = process.env.WORDPRESS_GRAPHQL_BASIC_AUTH_USER;
+const BASIC_AUTH_PASSWORD = process.env.WORDPRESS_GRAPHQL_BASIC_AUTH_PASSWORD;
+
+const defaultHeaders: Record<string, string> = {
+  'User-Agent': 'Mozilla/5.0 (compatible; NextJS/16.0; +https://mibyo.otemae-osu.com)',
+};
+
+if (BASIC_AUTH_USER && BASIC_AUTH_PASSWORD) {
+  const encodedCredentials = Buffer.from(`${BASIC_AUTH_USER}:${BASIC_AUTH_PASSWORD}`).toString('base64');
+  defaultHeaders.Authorization = `Basic ${encodedCredentials}`;
+}
 
 // GraphQLクライアントの作成
 const client = new GraphQLClient(GRAPHQL_URL, {
-  headers: {
-    'User-Agent': 'Mozilla/5.0 (compatible; NextJS/16.0; +https://mibyo.otemae-osu.com)',
-  },
+  headers: defaultHeaders,
 });
 
 export interface Post {

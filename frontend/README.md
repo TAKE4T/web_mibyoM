@@ -26,6 +26,9 @@
 
 ```bash
 NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wpmibyo.otemae-osu.com/graphql
+# WordPress を Basic 認証で保護している場合のみ設定
+WORDPRESS_GRAPHQL_BASIC_AUTH_USER=
+WORDPRESS_GRAPHQL_BASIC_AUTH_PASSWORD=
 ```
 
 ### 2. 依存関係のインストール
