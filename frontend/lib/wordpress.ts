@@ -1,6 +1,6 @@
 import { GraphQLClient, gql } from 'graphql-request';
 
-const GRAPHQL_URL = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL || 'https://wp.mibyo.otemae-osu.com/graphql';
+const GRAPHQL_URL = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL || 'https://wpmibyo.otemae-osu.com/graphql';
 
 // GraphQLクライアントの作成
 const client = new GraphQLClient(GRAPHQL_URL, {

@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'wp.mibyo.otemae-osu.com',
+        hostname: 'wpmibyo.otemae-osu.com',
         port: '',
         pathname: '/**',
       },

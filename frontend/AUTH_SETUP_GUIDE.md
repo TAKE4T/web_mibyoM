@@ -111,7 +111,7 @@ https://your-app.vercel.app/api/auth/callback/google
 
 ```bash
 # 既存のWordPress設定
-NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wp.mibyo.otemae-osu.com/graphql
+NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wpmibyo.otemae-osu.com/graphql
 
 # データベース
 DATABASE_URL="postgresql://user:password@host:5432/database"

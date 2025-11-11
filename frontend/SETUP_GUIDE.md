@@ -221,7 +221,7 @@ cp .env.example .env.local
 `.env.local` の内容:
 
 ```bash
-NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wp.mibyo.otemae-osu.com/graphql
+NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wpmibyo.otemae-osu.com/graphql
 ```
 
 **注意:**
@@ -240,7 +240,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'wp.mibyo.otemae-osu.com', // WordPressのドメイン
+        hostname: 'wpmibyo.otemae-osu.com', // WordPressのドメイン
         port: '',
         pathname: '/**',
       },
@@ -262,7 +262,7 @@ export default nextConfig;
 import { GraphQLClient, gql } from 'graphql-request';
 
 const GRAPHQL_URL = process.env.NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL ||
-  'https://wp.mibyo.otemae-osu.com/graphql';
+  'https://wpmibyo.otemae-osu.com/graphql';
 
 // GraphQLクライアントの作成
 const client = new GraphQLClient(GRAPHQL_URL, {
@@ -494,7 +494,7 @@ vercel env add NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL
 値を入力:
 
 ```
-https://wp.mibyo.otemae-osu.com/graphql
+https://wpmibyo.otemae-osu.com/graphql
 ```
 
 Environment: **Production** を選択
@@ -544,7 +544,7 @@ git push -u origin main
 
 | Name | Value |
 |------|-------|
-| `NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL` | `https://wp.mibyo.otemae-osu.com/graphql` |
+| `NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL` | `https://wpmibyo.otemae-osu.com/graphql` |
 
 #### ステップ5: デプロイ
 

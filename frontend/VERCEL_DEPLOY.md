@@ -34,7 +34,7 @@ vercel
 vercel env add NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL
 ```
 
-値に `https://wp.mibyo.otemae-osu.com/graphql` を入力し、Production / Preview / Development のすべてに設定しておくと安心です。
+値に `https://wpmibyo.otemae-osu.com/graphql` を入力し、Production / Preview / Development のすべてに設定しておくと安心です。
 
 ### 4. 本番デプロイ
 
@@ -54,7 +54,7 @@ vercel --prod
 4. **Environment Variables** に下記を設定  
    | Name | Value |  
    | --- | --- |  
-   | `NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL` | `https://wp.mibyo.otemae-osu.com/graphql` |
+   | `NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL` | `https://wpmibyo.otemae-osu.com/graphql` |
 5. 「Deploy」をクリック
 
 ---
@@ -87,7 +87,7 @@ add_action( 'init', function () {
 
 - [ ] トップページが表示される
 - [ ] WordPress から記事が取得できる
-- [ ] 画像が表示される（`wp.mibyo.otemae-osu.com` が許可済み）
+- [ ] 画像が表示される（`wpmibyo.otemae-osu.com` が許可済み）
 - [ ] 特集ナビやカテゴリリンクが機能する
 - [ ] メルマガ／お問い合わせページに遷移できる
 
@@ -110,7 +110,7 @@ git push origin main
 | 症状 | 確認ポイント |
 | --- | --- |
 | 記事が 0 件になる | `NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL` が正しいか／WPGraphQL が有効か |
-| 画像が表示されない | `next.config.ts` の `remotePatterns` に `wp.mibyo.otemae-osu.com` があるか |
+| 画像が表示されない | `next.config.ts` の `remotePatterns` に `wpmibyo.otemae-osu.com` があるか |
 | CORS エラー | WordPress 側で Vercel ドメインを許可したか |
 | ISR が更新されない | `app/page.tsx` の `revalidate` と Vercel Cache 設定を確認 |
 

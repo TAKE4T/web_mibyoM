@@ -1,6 +1,6 @@
 # おてまえ未病ハブ
 
-未病・セルフケアの実践知を届けるウェブメディア。Next.js + Headless WordPress で構築し、フロントは `mibyo.otemae-osu.com`、CMS は `wp.mibyo.otemae-osu.com` を想定しています。
+未病・セルフケアの実践知を届けるウェブメディア。Next.js + Headless WordPress で構築し、フロントは `mibyo.otemae-osu.com`、CMS は `wpmibyo.otemae-osu.com` を想定しています。
 
 ## 技術スタック
 
@@ -34,7 +34,7 @@ cp .env.example .env.local
 `.env.local`:
 
 ```
-NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wp.mibyo.otemae-osu.com/graphql
+NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wpmibyo.otemae-osu.com/graphql
 ```
 
 ローカル開発:
@@ -47,14 +47,14 @@ npm run dev
 ## Vercel デプロイ
 
 1. Vercel で新規プロジェクトを作成し、ルートディレクトリを `frontend` に設定
-2. 環境変数 `NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wp.mibyo.otemae-osu.com/graphql`
+2. 環境変数 `NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wpmibyo.otemae-osu.com/graphql`
 3. `npm run build` が通ることを確認してデプロイ
 4. カスタムドメイン `mibyo.otemae-osu.com` を割り当て
 
 ## WordPress 側のポイント
 
 - WPGraphQL プラグインを有効化
-- `https://wp.mibyo.otemae-osu.com/graphql` が 200 を返すことを確認
+- `https://wpmibyo.otemae-osu.com/graphql` が 200 を返すことを確認
 - アイキャッチ画像の CDN/ドメインを Next.js 側 (`next.config.ts`) で許可
 - `wordpress-cors-setup.php` の要領で `mibyo.otemae-osu.com` や Vercel ドメインを CORS 許可
 

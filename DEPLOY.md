@@ -1,13 +1,13 @@
 # デプロイガイド（おてまえ未病ハブ）
 
 フロント: `mibyo.otemae-osu.com`  
-WordPress (Headless): `wp.mibyo.otemae-osu.com`
+WordPress (Headless): `wpmibyo.otemae-osu.com`
 
 ---
 
 ## 1. WordPress 側チェック
 
-1. `https://wp.mibyo.otemae-osu.com/graphql` が 200 を返すか確認  
+1. `https://wpmibyo.otemae-osu.com/graphql` が 200 を返すか確認  
 2. WPGraphQL プラグイン有効化、パーマリンクを「投稿名」に設定  
 3. `wordpress-cors-setup.php` のサンプルを使い、`mibyo.otemae-osu.com` と Vercel ドメインを許可  
 4. テスト記事／アイキャッチ画像を最低 5 件登録
@@ -26,7 +26,7 @@ cp .env.example .env.local
 `.env.local`:
 
 ```
-NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wp.mibyo.otemae-osu.com/graphql
+NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wpmibyo.otemae-osu.com/graphql
 ```
 
 ---
@@ -37,7 +37,7 @@ NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wp.mibyo.otemae-osu.com/graphql
 
 1. Vercel → **Add New → Project**  
 2. リポジトリを選択し、Root Directory を `frontend` に設定  
-3. Environment Variables に `NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wp.mibyo.otemae-osu.com/graphql`  
+3. Environment Variables に `NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wpmibyo.otemae-osu.com/graphql`  
 4. Deploy をクリック  
 5. 成功後、**Settings → Domains** で `mibyo.otemae-osu.com` を追加
 

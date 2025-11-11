@@ -25,7 +25,7 @@
 `.env.local` を作成し、WordPress の GraphQL エンドポイントを指定します。
 
 ```bash
-NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wp.mibyo.otemae-osu.com/graphql
+NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wpmibyo.otemae-osu.com/graphql
 ```
 
 ### 2. 依存関係のインストール
@@ -45,7 +45,7 @@ npm run dev
 ## Vercel へのデプロイ
 
 1. Vercel プロジェクトを作成し GitHub リポジトリを接続
-2. `NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL` に `https://wp.mibyo.otemae-osu.com/graphql` を設定
+2. `NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL` に `https://wpmibyo.otemae-osu.com/graphql` を設定
 3. `npm run build` が通ることを確認してデプロイ
 
 ## プロジェクト構成
@@ -70,7 +70,7 @@ frontend/
 
 1. **WPGraphQL プラグイン** を有効化
 2. **パーマリンク** を「投稿名」に設定
-3. 画像をフロントで表示できるよう `wp.mibyo.otemae-osu.com` でホスティング
+3. 画像をフロントで表示できるよう `wpmibyo.otemae-osu.com` でホスティング
 4. 必要に応じて CORS を許可
 
 ```php
@@ -82,11 +82,11 @@ add_action('init', function () {
 
 ## トラブルシューティング
 
-- **記事が取得できない**: `https://wp.mibyo.otemae-osu.com/graphql` が 200 を返しているか確認
+- **記事が取得できない**: `https://wpmibyo.otemae-osu.com/graphql` が 200 を返しているか確認
 - **画像が表示されない**: `next.config.ts` の `remotePatterns` に画像のドメインが含まれているか確認
 - **ISR が反映されない**: `revalidate` の秒数（`app/page.tsx`）と Vercel のキャッシュ設定を確認
 
 ## 関連ドメイン
 
 - フロント: `https://mibyo.otemae-osu.com`
-- Headless WordPress: `https://wp.mibyo.otemae-osu.com`
+- Headless WordPress: `https://wpmibyo.otemae-osu.com`
