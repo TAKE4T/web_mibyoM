@@ -119,14 +119,14 @@ export default async function PostPage({ params }: { params: PageParams }) {
             {post.tags?.nodes && post.tags.nodes.length > 0 && (
               <div className="my-6 flex flex-wrap gap-2">
                 {post.tags.nodes.map((tag) => (
-                  <a
+                  <Link
                     key={tag.id}
                     href={`/tag/${tag.slug}`}
                     className="inline-flex items-center gap-1 rounded-full border border-gray-300 bg-white px-3 py-1 text-sm text-gray-700 hover:border-red-600 hover:text-red-600 transition-colors"
                   >
                     <span className="text-xs">#</span>
                     {tag.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}

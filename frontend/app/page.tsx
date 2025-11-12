@@ -194,13 +194,13 @@ export default async function Home() {
                     <ul className="space-y-2">
                       {categories.slice(0, 10).map((category) => (
                         <li key={category.id}>
-                          <a
+                          <Link
                             href={`/category/${category.slug}`}
                             className="flex items-center justify-between text-sm text-gray-700 hover:text-red-600 transition-colors"
                           >
                             <span>{category.name}</span>
                             <span className="text-xs text-gray-400">({category.count})</span>
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
