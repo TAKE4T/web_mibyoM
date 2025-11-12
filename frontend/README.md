@@ -29,6 +29,8 @@ NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wpmibyo.otemae-osu.com/graphql
 # WordPress を Basic 認証で保護している場合のみ設定
 WORDPRESS_GRAPHQL_BASIC_AUTH_USER=
 WORDPRESS_GRAPHQL_BASIC_AUTH_PASSWORD=
+# SSL 証明書エラーを一時的に無視する場合のみ true
+WORDPRESS_GRAPHQL_ALLOW_INSECURE_SSL=false
 ```
 
 ### 2. 依存関係のインストール

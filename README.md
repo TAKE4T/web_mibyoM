@@ -38,6 +38,8 @@ NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL=https://wpmibyo.otemae-osu.com/graphql
 # Basic 認証でWordPressを保護している場合のみ設定
 WORDPRESS_GRAPHQL_BASIC_AUTH_USER=
 WORDPRESS_GRAPHQL_BASIC_AUTH_PASSWORD=
+# WordPress 側の証明書エラーを一時的に無視する場合のみ true
+WORDPRESS_GRAPHQL_ALLOW_INSECURE_SSL=false
 ```
 
 ローカル開発:
@@ -58,6 +60,7 @@ npm run dev
 
 - WPGraphQL プラグインを有効化
 - Basic 認証をかける場合は `WORDPRESS_GRAPHQL_BASIC_AUTH_*` を設定して Next.js からもアクセス可能にする
+- SSL 証明書が未設定の場合は早急に正しい証明書を入れるか、一時的に `WORDPRESS_GRAPHQL_ALLOW_INSECURE_SSL=true` でしのぐ
 - `https://wpmibyo.otemae-osu.com/graphql` が 200 を返すことを確認
 - アイキャッチ画像の CDN/ドメインを Next.js 側 (`next.config.ts`) で許可
 - `wordpress-cors-setup.php` の要領で `mibyo.otemae-osu.com` や Vercel ドメインを CORS 許可

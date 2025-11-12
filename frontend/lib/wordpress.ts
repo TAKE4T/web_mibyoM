@@ -1,4 +1,5 @@
 import { GraphQLClient, gql } from 'graphql-request';
+import https from 'https';
 
 const GRAPHQL_URL =
   process.env.WORDPRESS_GRAPHQL_URL ||
@@ -7,6 +8,7 @@ const GRAPHQL_URL =
 
 const BASIC_AUTH_USER = process.env.WORDPRESS_GRAPHQL_BASIC_AUTH_USER;
 const BASIC_AUTH_PASSWORD = process.env.WORDPRESS_GRAPHQL_BASIC_AUTH_PASSWORD;
+const ALLOW_INSECURE_SSL = process.env.WORDPRESS_GRAPHQL_ALLOW_INSECURE_SSL === 'true';
 
 const defaultHeaders: Record<string, string> = {
   'User-Agent': 'Mozilla/5.0 (compatible; NextJS/16.0; +https://mibyo.otemae-osu.com)',
@@ -17,9 +19,25 @@ if (BASIC_AUTH_USER && BASIC_AUTH_PASSWORD) {
   defaultHeaders.Authorization = `Basic ${encodedCredentials}`;
 }
 
+const insecureHttpsAgent =
+  ALLOW_INSECURE_SSL && GRAPHQL_URL.startsWith('https://')
+    ? new https.Agent({ rejectUnauthorized: false })
+    : undefined;
+
+const fetchWithOptionalAgent: typeof fetch = insecureHttpsAgent
+  ? (input, init = {}) => {
+      const extendedInit = {
+        ...init,
+        agent: insecureHttpsAgent,
+      } as RequestInit & { agent: https.Agent };
+      return fetch(input, extendedInit);
+    }
+  : fetch;
+
 // GraphQLクライアントの作成
 const client = new GraphQLClient(GRAPHQL_URL, {
   headers: defaultHeaders,
+  fetch: fetchWithOptionalAgent,
 });
 
 export interface Post {
