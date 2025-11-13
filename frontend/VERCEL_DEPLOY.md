@@ -43,12 +43,6 @@ vercel env add WORDPRESS_GRAPHQL_BASIC_AUTH_USER
 vercel env add WORDPRESS_GRAPHQL_BASIC_AUTH_PASSWORD
 ```
 
-SSL 証明書が未設定で一時的に検証をスキップしたい場合のみ、次も `true` で登録します。
-
-```bash
-vercel env add WORDPRESS_GRAPHQL_ALLOW_INSECURE_SSL
-```
-
 ### 4. 本番デプロイ
 
 ```bash
@@ -70,7 +64,6 @@ vercel --prod
    | `NEXT_PUBLIC_WORDPRESS_GRAPHQL_URL` | `https://wpmibyo.otemae-osu.com/graphql` |
    | `WORDPRESS_GRAPHQL_BASIC_AUTH_USER` | *(Basic認証利用時のみ)* |
    | `WORDPRESS_GRAPHQL_BASIC_AUTH_PASSWORD` | *(Basic認証利用時のみ)* |
-   | `WORDPRESS_GRAPHQL_ALLOW_INSECURE_SSL` | *(SSL未整備時の一時対応として `true`)* |
 5. 「Deploy」をクリック
 
 ---
