@@ -1,4 +1,4 @@
-# おてまえ未病ハブ
+# おてまえ文庫
 
 未病・セルフケアの実践知を届けるウェブメディア。Next.js + Headless WordPress で構築し、フロントは `mibyo.otemae-osu.com`、CMS は `wpmibyo.otemae-osu.com` を想定しています。
 
@@ -81,4 +81,4 @@ npm run dev
 
 ## ライセンス
 
-© おてまえ未病ハブ / 無断転載禁止
+© おてまえ文庫 / 無断転載禁止

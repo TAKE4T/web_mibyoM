@@ -34,7 +34,7 @@ export default function ArticleCard({
   };
 
   // 著者名を取得（無い場合はデフォルト）
-  const authorName = post.author?.node?.name || 'おてまえ未病ハブ編集部';
+  const authorName = post.author?.node?.name || 'おてまえ文庫編集部';
 
   // リストレイアウト（サイドバー用）
   if (layout === 'list') {

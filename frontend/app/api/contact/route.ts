@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
     // メール本文作成
     const mailOptions = {
       from: {
-        name: 'おてまえ未病ハブ お問い合わせ',
+        name: 'おてまえ文庫 お問い合わせ',
         address: process.env.EMAIL_USER,
       },
       to: process.env.EMAIL_TO || process.env.EMAIL_USER,
@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
 ${message}
 
 ---
-このメールは おてまえ未病ハブ のお問い合わせフォームから送信されました。
+このメールは おてまえ文庫 のお問い合わせフォームから送信されました。
       `,
       html: `
         <!DOCTYPE html>
@@ -108,7 +108,7 @@ ${message}
               <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 20px 0;">
 
               <p style="font-size: 12px; color: #999; margin: 10px 0;">
-                このメールは おてまえ未病ハブ のお問い合わせフォームから送信されました。<br>
+                このメールは おてまえ文庫 のお問い合わせフォームから送信されました。<br>
                 返信する場合は、上記のメールアドレス宛に送信してください。
               </p>
             </div>

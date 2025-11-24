@@ -1,4 +1,4 @@
-# デプロイガイド（おてまえ未病ハブ）
+# デプロイガイド（おてまえ文庫）
 
 フロント: `mibyo.otemae-osu.com`  
 WordPress (Headless): `wpmibyo.otemae-osu.com`

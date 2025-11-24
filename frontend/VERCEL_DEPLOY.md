@@ -1,4 +1,4 @@
-# Vercel デプロイ手順（おてまえ未病ハブ）
+# Vercel デプロイ手順（おてまえ文庫）
 
 `mibyo.otemae-osu.com` で公開する Next.js フロントを Vercel にデプロイするための手順です。CLI と Dashboard どちらでも進められます。
 

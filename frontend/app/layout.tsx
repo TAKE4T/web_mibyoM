@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "おてまえ未病ハブ",
-  description: "東洋と西洋の知恵で未病を読み解き、セルフケアの最新知見を届けるウェブメディア",
+  title: "おてまえ文庫",
+  description: "東洋と西洋の知恵で未病を読み解き、セルフケアの最新知見を届けるウェブメディア（おてまえ文庫）",
 };
 
 export default function RootLayout({

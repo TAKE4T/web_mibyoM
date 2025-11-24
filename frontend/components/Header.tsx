@@ -32,7 +32,7 @@ export default function Header() {
         {/* トップバー */}
         <div className="flex h-10 items-center justify-end border-b border-gray-100 text-xs gap-4">
           <Link href="/about" className="text-gray-600 hover:text-gray-900">
-            おてまえ未病ハブとは？
+            おてまえ文庫とは？
           </Link>
           <Link href="/contact" className="text-gray-600 hover:text-gray-900">
             お問い合わせ
@@ -46,7 +46,7 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center">
             <h1 className="text-xl font-bold tracking-tight text-gray-900 md:text-2xl">
-              おてまえ未病ハブ
+              おてまえ文庫
             </h1>
           </Link>
 

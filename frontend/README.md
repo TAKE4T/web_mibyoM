@@ -1,4 +1,4 @@
-# おてまえ未病ハブ - Webメディア
+# おてまえ文庫 - Webメディア
 
 東洋と西洋のヘルスケア知識を結び、未病ケアの実践知を届けるウェブメディア。Next.js + Headless WordPress で構築し、mibyo.otemae-osu.com へ配信します。
 

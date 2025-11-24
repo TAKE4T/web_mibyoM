@@ -24,7 +24,7 @@ const featureLinks = [
 ];
 
 const aboutLinks = [
-  { label: 'おてまえ未病ハブとは？', href: '/about' },
+  { label: 'おてまえ文庫とは？', href: '/about' },
   { label: '運営会社', href: '/company' },
   { label: 'ショップ', href: '/shop' },
   { label: '特定商取引法に基づく表示', href: '/law' },
@@ -109,7 +109,7 @@ export default function Footer() {
               </a>
             </div>
             <p className="text-xs text-gray-500">
-              &copy; {currentYear} おてまえ未病ハブ. All rights reserved.
+              &copy; {currentYear} おてまえ文庫. All rights reserved.
             </p>
           </div>
         </div>
