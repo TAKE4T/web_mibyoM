@@ -58,6 +58,7 @@ export default async function Home() {
   const rankingPosts = posts.slice(0, 5);
 
   // 特集セクション（タグ連動）
+  // Build feature sections — match by slug only. Ensure tags use English slugs.
   const featureSections = featureTags.map((tag) => ({
     ...tag,
     posts: posts

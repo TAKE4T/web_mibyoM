@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+// notFound is intentionally not used: show "記事準備中" inside article pages
 import Link from 'next/link';
 import Image from 'next/image';
 import { getPostBySlug, getPosts, getPopularPosts } from '@/lib/wordpress';
@@ -26,9 +26,7 @@ export async function generateMetadata({ params }: { params: PageParams }) {
   const post = await getPostBySlug(slug);
 
   if (!post) {
-    return {
-      title: '記事が見つかりません',
-    };
+    return { title: '記事準備中' };
   }
 
   return {
@@ -42,7 +40,27 @@ export default async function PostPage({ params }: { params: PageParams }) {
   const post = await getPostBySlug(slug);
 
   if (!post) {
-    notFound();
+    // If a post isn't found, show an inline "記事準備中" UI rather than redirecting
+    // to the global 404. This preserves the page frame and provides a clearer message.
+    return (
+      <div className="min-h-screen bg-white">
+        <Header />
+
+        <main className="mx-auto max-w-[1200px] px-4 py-6">
+          <article className="lg:col-span-9">
+            <div className="rounded-lg border border-gray-200 bg-gray-50 p-8 text-center">
+              <h1 className="mb-2 text-2xl font-bold text-gray-900">記事準備中</h1>
+              <p className="text-gray-700">このページは現在準備中です。公開までしばらくお待ちください。</p>
+              <div className="mt-4">
+                <Link href="/" className="text-red-600 hover:text-red-700">トップへ戻る</Link>
+              </div>
+            </div>
+          </article>
+        </main>
+
+        <Footer />
+      </div>
+    );
   }
 
   // 関連記事（人気記事）
