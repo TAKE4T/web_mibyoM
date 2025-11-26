@@ -37,9 +37,6 @@ export default function Header() {
           <Link href="/contact" className="text-gray-600 hover:text-gray-900">
             お問い合わせ
           </Link>
-          <Link href="/newsletter" className="text-red-600 hover:text-red-700 font-bold">
-            メルマガ登録
-          </Link>
         </div>
 
         {/* メインヘッダー */}

@@ -26,8 +26,7 @@ const featureLinks = [
 const aboutLinks = [
   { label: 'おてまえ文庫とは？', href: '/about' },
   { label: '運営会社', href: '/company' },
-  { label: 'ショップ', href: '/shop' },
-  { label: '特定商取引法に基づく表示', href: '/law' },
+  { label: 'ショップ', href: 'https://otemae-osu.com', external: true },
   { label: '個人情報保護方針', href: '/privacy' },
   { label: 'お問い合わせ', href: '/contact' },
 ];
@@ -84,9 +83,15 @@ export default function Footer() {
             <ul className="space-y-2">
               {aboutLinks.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-gray-600 hover:text-red-600">
-                    {item.label}
-                  </Link>
+                  {item.external ? (
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-red-600">
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link href={item.href} className="text-gray-600 hover:text-red-600">
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

@@ -1,0 +1,21 @@
+{
+  "name": "web_mibyom",
+  "version": "1.0.0",
+  "description": "未病・セルフケアの実践知を届けるウェブメディア。Next.js + Headless WordPress で構築し、フロントは `mibyo.otemae-osu.com`、CMS は `wpmibyo.otemae-osu.com` を想定しています。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TAKE4T/web_mibyoM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/TAKE4T/web_mibyoM/issues"
+  },
+  "homepage": "https://github.com/TAKE4T/web_mibyoM#readme"
+}
