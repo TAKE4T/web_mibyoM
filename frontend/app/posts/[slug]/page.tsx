@@ -149,21 +149,7 @@ export default async function PostPage({ params }: { params: PageParams }) {
               </div>
             )}
 
-            {/* CTA */}
-            <div className="my-8 border-2 border-red-600 bg-red-50 p-6 text-center">
-              <h3 className="mb-2 text-lg font-bold text-gray-900">
-                メルマガ登録で最新情報をお届けします
-              </h3>
-              <p className="mb-4 text-sm text-gray-700">
-                ビジネスに役立つフレームワークやマーケティングの知識を定期配信。今なら登録特典付き！
-              </p>
-              <Link
-                href="/newsletter"
-                className="inline-block bg-red-600 px-8 py-3 text-sm font-bold text-white hover:bg-red-700 transition-colors"
-              >
-                メルマガに登録する
-              </Link>
-            </div>
+            {/* メルマガ CTA は一時的に非表示 */}
 
             {/* 関連記事 */}
             {relatedPosts.length > 0 && (
