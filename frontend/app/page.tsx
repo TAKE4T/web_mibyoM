@@ -209,12 +209,7 @@ export default async function Home() {
                 </div>
               )}
 
-              {/* バナー広告エリア */}
-              <div className="border border-gray-200 bg-gray-100 p-4">
-                <div className="aspect-[300/250] flex items-center justify-center bg-white text-gray-400 text-sm">
-                  広告枠
-                </div>
-              </div>
+              {/* バナー広告エリア（非表示） */}
             </div>
           </aside>
         </div>
