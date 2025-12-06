@@ -169,9 +169,9 @@ export default async function PostPage({ params }: { params: PageParams }) {
           {/* サイドバー */}
           <aside className="lg:col-span-3">
             {/* 同じカテゴリーの記事や広告など */}
-            <div className="border border-gray-200 bg-gray-100 p-4">
+              <div className="border border-gray-200 bg-gray-100 p-4">
               <div className="aspect-[300/250] flex items-center justify-center bg-white text-gray-400 text-sm">
-                広告枠
+                {/* 広告枠（非表示） */}
               </div>
             </div>
           </aside>
