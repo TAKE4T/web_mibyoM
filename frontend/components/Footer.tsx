@@ -21,6 +21,7 @@ const featureLinks = [
   { label: '腸活ブームを振り返る', href: '/tag/gut-brain-health' },
   { label: '幹細胞治療最前線', href: '/tag/stem-cell-frontier' },
   { label: 'コーヒー豆を科学する', href: '/tag/coffee-science' },
+  { label: 'ダイエットと代謝設計', href: '/tag/diet-metabolism' },
 ];
 
 const aboutLinks = [

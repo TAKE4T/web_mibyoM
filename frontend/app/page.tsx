@@ -20,6 +20,7 @@ export default async function Home() {
     { slug: 'gut-brain-health', title: '腸活ブームを振り返る', description: '腸脳相関を流行で終わらせない' },
     { slug: 'stem-cell-frontier', title: '幹細胞治療最前線', description: '細胞を目覚めさせる医療のいま' },
     { slug: 'coffee-science', title: 'コーヒー豆を科学する', description: '焙煎と産地で叶える体調別ブレンド' },
+    { slug: 'diet-metabolism', title: 'ダイエットと代謝設計', description: '体重管理と代謝を整える実践ガイド' },
   ];
 
   // デバッグ情報（開発環境のみ）
