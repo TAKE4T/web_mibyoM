@@ -17,11 +17,11 @@ const featureLinks = [
   { label: '睡眠ナビ', href: '/tag/sleep-navigation' },
   { label: '和韓蒸しとは', href: '/tag/wa-kan-steam' },
   { label: '頭皮ケア特集', href: '/tag/scalp-care' },
+  { label: 'ダイエットと代謝の実践ガイド', href: '/tag/diet-metabolism' },
   { label: '肌ケアとは', href: '/tag/skin-care' },
   { label: '腸活ブームを振り返る', href: '/tag/gut-brain-health' },
   { label: '幹細胞治療最前線', href: '/tag/stem-cell-frontier' },
   { label: 'コーヒー豆を科学する', href: '/tag/coffee-science' },
-  { label: 'ダイエットと代謝設計', href: '/tag/diet-metabolism' },
 ];
 
 const aboutLinks = [
