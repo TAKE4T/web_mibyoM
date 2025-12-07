@@ -196,7 +196,7 @@ npm install
 ```json
 {
   "dependencies": {
-    "next": "16.0.4",
+    "next": "16.1.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "graphql": "^16.12.0",
