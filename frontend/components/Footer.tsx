@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FEATURED } from '@/config/featured';
 
 const navigationLinks = [
   { label: 'オンライン保険調剤', href: '/category/online-dispensing' },
@@ -11,21 +12,15 @@ const navigationLinks = [
   { label: 'イベント・マルシェ', href: '/category/events-marche' },
 ];
 
-const topFeatureLinks = [
-  { label: '毎日の食事', href: '/tag/everyday-meals' },
-  { label: '運動の理屈', href: '/tag/exercise-principles' },
-  { label: '睡眠ナビ', href: '/tag/sleep-navigation' },
-  { label: '和韓蒸しとは', href: '/tag/wa-kan-steam' },
-  { label: '頭皮ケア特集', href: '/tag/scalp-care' },
-  { label: '肌ケアとは', href: '/tag/skin-care' },
-];
+const topFeatureLinks = FEATURED
+  .filter((f) => f.visible !== false && (f.placement === 'top' || f.placement === 'both'))
+  .sort((a, b) => (a.order || 0) - (b.order || 0))
+  .map((f) => ({ label: f.title, href: `/tag/${f.slug}` }));
 
-const deepFeatureLinks = [
-  { label: 'ダイエットと代謝の実践ガイド', href: '/tag/diet-metabolism' },
-  { label: '腸活ブームを振り返る', href: '/tag/gut-brain-health' },
-  { label: '幹細胞治療最前線', href: '/tag/stem-cell-frontier' },
-  { label: 'コーヒー豆を科学する', href: '/tag/coffee-science' },
-];
+const deepFeatureLinks = FEATURED
+  .filter((f) => f.visible !== false && (f.placement === 'deep' || f.placement === 'both'))
+  .sort((a, b) => (a.order || 0) - (b.order || 0))
+  .map((f) => ({ label: f.title, href: `/tag/${f.slug}` }));
 
 const aboutLinks = [
   { label: 'おてまえ文庫とは？', href: '/about' },

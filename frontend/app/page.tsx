@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FEATURED } from '@/config/featured';
 import { getPosts, getCategories } from '@/lib/wordpress';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -10,18 +11,7 @@ export default async function Home() {
   // 記事とカテゴリーを取得
   const { posts, total } = await getPosts({ perPage: 30 });
   const categories = await getCategories();
-  const featureTags = [
-    { slug: 'everyday-meals', title: '毎日の食事', description: '症状別で選ぶ理想の食事とレシピ' },
-    { slug: 'exercise-principles', title: '運動の理屈', description: '目的別の運動計画と体の使い方' },
-    { slug: 'sleep-navigation', title: '睡眠ナビ', description: '悩み別の休息アプローチ' },
-    { slug: 'wa-kan-steam', title: '和韓蒸しとは', description: '蒸気療法と巡りケアの最前線' },
-    { slug: 'scalp-care', title: '頭皮ケア特集', description: '髪の変化を生む頭皮環境の整え方' },
-    { slug: 'skin-care', title: '肌ケアとは', description: 'お肌を守る最新の素材と成分' },
-    { slug: 'gut-brain-health', title: '腸活ブームを振り返る', description: '腸脳相関を流行で終わらせない' },
-    { slug: 'stem-cell-frontier', title: '幹細胞治療最前線', description: '細胞を目覚めさせる医療のいま' },
-    { slug: 'coffee-science', title: 'コーヒー豆を科学する', description: '焙煎と産地で叶える体調別ブレンド' },
-    { slug: 'diet-metabolism', title: 'ダイエットと代謝の実践ガイド', description: '体重管理と代謝を整える実践ガイド' },
-  ];
+  const featureTags = FEATURED.filter((f) => f.visible !== false);
 
   // デバッグ情報（開発環境のみ）
   if (process.env.NODE_ENV === 'development') {
@@ -59,13 +49,16 @@ export default async function Home() {
   const rankingPosts = posts.slice(0, 5);
 
   // 特集セクション（タグ連動）
-  // Build feature sections — match by slug only. Ensure tags use English slugs.
-  const featureSections = featureTags.map((tag) => ({
-    ...tag,
-    posts: posts
-      .filter((post) => post.tags?.nodes.some((node) => node.slug === tag.slug))
-      .slice(0, 3),
-  }));
+  // Build feature sections — match by slug only using FEATURED config.
+  const featureSections = featureTags
+    .filter((f) => f.placement === 'top' || f.placement === 'both')
+    .sort((a, b) => (a.order || 0) - (b.order || 0))
+    .map((tag) => ({
+      ...tag,
+      posts: posts
+        .filter((post) => post.tags?.nodes.some((node) => node.slug === tag.slug))
+        .slice(0, 3),
+    }));
 
   return (
     <div className="min-h-screen bg-white">
