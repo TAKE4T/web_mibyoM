@@ -79,12 +79,7 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              {/* Ensure ダイエットと代謝の実践ガイド is present (fallback) */}
-              <li>
-                <Link href="/tag/diet-metabolism" className="text-gray-600 hover:text-red-600">
-                  ダイエットと代謝の実践ガイド
-                </Link>
-              </li>
+              {/* Fallback link removed; deepFeatureLinks includes diet-metabolism explicitly */}
             </ul>
           </div>
 
