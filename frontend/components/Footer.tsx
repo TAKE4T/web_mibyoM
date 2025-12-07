@@ -11,13 +11,16 @@ const navigationLinks = [
   { label: 'イベント・マルシェ', href: '/category/events-marche' },
 ];
 
-const featureLinks = [
+const topFeatureLinks = [
   { label: '毎日の食事', href: '/tag/everyday-meals' },
   { label: '運動の理屈', href: '/tag/exercise-principles' },
   { label: '睡眠ナビ', href: '/tag/sleep-navigation' },
   { label: '和韓蒸しとは', href: '/tag/wa-kan-steam' },
   { label: '頭皮ケア特集', href: '/tag/scalp-care' },
   { label: '肌ケアとは', href: '/tag/skin-care' },
+];
+
+const deepFeatureLinks = [
   { label: 'ダイエットと代謝の実践ガイド', href: '/tag/diet-metabolism' },
   { label: '腸活ブームを振り返る', href: '/tag/gut-brain-health' },
   { label: '幹細胞治療最前線', href: '/tag/stem-cell-frontier' },
@@ -56,7 +59,7 @@ export default function Footer() {
           <div>
             <h3 className="mb-3 font-bold text-gray-900">特集で探す</h3>
             <ul className="space-y-2">
-              {featureLinks.slice(0, 6).map((item) => (
+              {topFeatureLinks.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-gray-600 hover:text-red-600">
                     {item.label}
@@ -69,7 +72,7 @@ export default function Footer() {
           <div>
             <h3 className="mb-3 font-bold text-gray-900">深掘りガイド</h3>
             <ul className="space-y-2">
-              {featureLinks.slice(6).map((item) => (
+              {deepFeatureLinks.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-gray-600 hover:text-red-600">
                     {item.label}
