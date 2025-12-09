@@ -103,15 +103,15 @@ export default function ContactPage() {
 
             {/* ご質問 */}
             <div>
-              <label htmlFor="message" className="mb-2 block text-sm font-medium text-gray-700">
-                ご質問 <span className="text-red-600">*</span>
-              </label>
+                <label htmlFor="message" className="mb-2 block text-sm font-medium text-gray-700">
+                  ご質問 <span className="text-gray-500 text-sm ml-1">(任意)</span>
+                </label>
               <textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                required
+                // message is optional now
                 rows={8}
                 className="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500"
                 placeholder="ご質問をご記入ください"

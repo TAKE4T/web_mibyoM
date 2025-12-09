@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     console.log('受信したデータ:', { name, email, messageLength: message?.length });
 
     // バリデーション
-    if (!name || !email || !message) {
+    if (!name || !email) {
       console.log('エラー: 必須フィールドが空');
       return NextResponse.json(
         { error: '全てのフィールドを入力してください' },
@@ -64,14 +64,14 @@ export async function POST(request: NextRequest) {
       replyTo: email, // 返信先を送信者のメールアドレスに設定
       subject: `【おてまえ会員登録】${name} 様より`,
       text: `
-お名前: ${name}
-メールアドレス: ${email}
+    お名前: ${name}
+    メールアドレス: ${email}
 
-お問い合わせ内容:
-${message}
+    ご質問:
+    ${message || '(なし)'}
 
----
-このメールは おてまえ文庫 のお問い合わせフォームから送信されました。
+    ---
+    このメールは おてまえ文庫 のお問い合わせフォームから送信されました。
       `,
       html: `
         <!DOCTYPE html>
@@ -101,7 +101,7 @@ ${message}
               <div style="margin: 20px 0;">
                 <strong style="color: #666; display: block; margin-bottom: 10px;">ご質問:</strong>
                 <div style="background-color: #f5f5f5; padding: 15px; border-radius: 4px; white-space: pre-wrap; word-wrap: break-word;">
-${message}
+${message || '(なし)'}
                 </div>
               </div>
 
