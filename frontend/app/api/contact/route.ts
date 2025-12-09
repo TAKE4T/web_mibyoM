@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
     if (!name || !email) {
       console.log('エラー: 必須フィールドが空');
       return NextResponse.json(
-        { error: '全てのフィールドを入力してください' },
+        { error: '名前とメールアドレスは必須です' },
         { status: 400 }
       );
     }
