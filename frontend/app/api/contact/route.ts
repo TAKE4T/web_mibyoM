@@ -57,12 +57,12 @@ export async function POST(request: NextRequest) {
     // メール本文作成
     const mailOptions = {
       from: {
-        name: 'おてまえ文庫 お問い合わせ',
+        name: 'おてまえ文庫 おてまえ会員登録',
         address: process.env.EMAIL_USER,
       },
       to: process.env.EMAIL_TO || process.env.EMAIL_USER,
       replyTo: email, // 返信先を送信者のメールアドレスに設定
-      subject: `【お問い合わせ】${name} 様より`,
+      subject: `【おてまえ会員登録】${name} 様より`,
       text: `
 お名前: ${name}
 メールアドレス: ${email}
@@ -83,8 +83,8 @@ ${message}
         <body style="font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif; line-height: 1.6; color: #333;">
           <div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
             <div style="background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-              <h2 style="color: #dc2626; border-bottom: 2px solid #dc2626; padding-bottom: 10px; margin-top: 0;">
-                お問い合わせ
+                <h2 style="color: #dc2626; border-bottom: 2px solid #dc2626; padding-bottom: 10px; margin-top: 0;">
+                おてまえ会員登録
               </h2>
 
               <div style="margin: 20px 0;">
@@ -99,7 +99,7 @@ ${message}
               </div>
 
               <div style="margin: 20px 0;">
-                <strong style="color: #666; display: block; margin-bottom: 10px;">お問い合わせ内容:</strong>
+                <strong style="color: #666; display: block; margin-bottom: 10px;">ご質問:</strong>
                 <div style="background-color: #f5f5f5; padding: 15px; border-radius: 4px; white-space: pre-wrap; word-wrap: break-word;">
 ${message}
                 </div>
@@ -129,7 +129,7 @@ ${message}
     return NextResponse.json(
       {
         success: true,
-        message: 'お問い合わせを受け付けました。ありがとうございます。',
+        message: 'おてまえ会員登録を受け付けました。ありがとうございます。アンケートURLを後ほど送付します。',
         messageId: info.messageId,
       },
       { status: 200 }

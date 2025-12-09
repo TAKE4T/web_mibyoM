@@ -37,7 +37,7 @@ export default function ContactPage() {
 
       if (response.ok) {
         setSubmitStatus('success');
-        setSubmitMessage('お問い合わせを受け付けました。ありがとうございます。');
+        setSubmitMessage('おてまえ会員登録を受け付けました。ありがとうございます。アンケートURLを後ほど送付します。');
         setFormData({ name: '', email: '', message: '' }); // フォームをリセット
       } else {
         setSubmitStatus('error');
@@ -63,7 +63,7 @@ export default function ContactPage() {
       <Header />
 
       <main className="mx-auto max-w-[800px] px-4 py-12">
-        <h1 className="mb-8 text-3xl font-bold text-gray-900">お問い合わせ</h1>
+        <h1 className="mb-8 text-3xl font-bold text-gray-900">おてまえ会員登録</h1>
 
         <div className="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -101,10 +101,10 @@ export default function ContactPage() {
               />
             </div>
 
-            {/* お問い合わせ内容 */}
+            {/* ご質問 */}
             <div>
               <label htmlFor="message" className="mb-2 block text-sm font-medium text-gray-700">
-                お問い合わせ内容 <span className="text-red-600">*</span>
+                ご質問 <span className="text-red-600">*</span>
               </label>
               <textarea
                 id="message"
@@ -114,7 +114,7 @@ export default function ContactPage() {
                 required
                 rows={8}
                 className="w-full rounded-md border border-gray-300 px-4 py-2 text-gray-900 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500"
-                placeholder="お問い合わせ内容をご記入ください"
+                placeholder="ご質問をご記入ください"
               />
             </div>
 
